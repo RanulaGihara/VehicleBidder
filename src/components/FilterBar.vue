@@ -5,6 +5,11 @@
     @change="onBrandChange"
     style="width: 200px"
   >
+    <el-option value="">
+      <template #default>
+        <span class="text-gray-500 text-sm">All Brands</span>
+      </template>
+    </el-option>
     <el-option
       v-for="(brand, index) in brands"
       :key="index"
