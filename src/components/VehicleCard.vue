@@ -1,33 +1,69 @@
 <template>
-  <el-card shadow="hover" class="m-4 w-[300px] flex flex-col justify-between">
-    <!-- Vehicle Image -->
-    <div class="w-full">
-      <el-image :src="vehicle.image" class="w-full h-auto" />
+  <el-card
+    shadow="hover"
+    class="m-4 w-[380px] h-[410px] flex flex-col overflow-hidden rounded-lg"
+  >
+    <div class="relative w-full h-52 overflow-hidden mb-4">
+      <el-image :src="vehicle.image" class="w-full h-full object-cover" />
+      <div class="absolute bottom-2 right-2 flex space-x-2">
+        <div
+          class="bg-green-800 text-white text-xs font-semibold px-2 py-1 rounded"
+        >
+          LKR {{ vehicle.price.toLocaleString() }}
+        </div>
+      </div>
     </div>
 
-    <!-- Vehicle Information -->
-    <div class="mt-2">
+    <div class="px-4 py-2 flex items-center justify-between flex-1">
       <h3 class="font-semibold text-lg">
-        {{ vehicle.brand }} {{ vehicle.model }} {{ vehicle.year }}
+        {{ vehicle.brand }} {{ vehicle.model }}
+        <span class="text-sm text-gray-500">({{ vehicle.year }})</span>
       </h3>
-      <p class="text-gray-600">{{ vehicle.color }}</p>
-      <p class="text-gray-800">
-        Price: LKR {{ vehicle.price.toLocaleString() }}
-      </p>
+    </div>
+    <div class="px-2 mb-2 flex items-center justify-between flex-1">
+      <p class="text-gray-400 text-xs ml-2">Color: {{ vehicle.color }}</p>
     </div>
 
     <!-- Bid Section -->
-    <div class="mt-4 flex flex-col gap-2">
-      <el-input
+    <div class="px-4 pt-5  mt-4 border-t">
+      <!-- <el-input
         v-model="bidPrice"
         placeholder="Enter bid amount"
         type="number"
         @input="validateBid"
+        size="small"
+        class="mb-2"
       />
-      <el-button type="primary" :disabled="!isValidBid" @click="submitBid">
+      <el-button  
+        type="primary"
+        :disabled="!isValidBid"
+        @click="submitBid"
+        size="small"
+        class="w-60"
+      >
         Submit
-      </el-button>
-      <div v-if="errorMessage" class="text-red-500 text-sm">
+      </el-button> -->
+
+      <div class="flex items-center space-x-4">
+        <el-input
+          v-model="bidPrice"
+          placeholder="Enter your bid amount"
+          type="number"
+          @input="validateBid"
+          size="small"
+          class="flex-1"
+        />
+        <el-button
+          type="primary"
+          :disabled="!isValidBid"
+          @click="submitBid"
+          size="small"
+          class="w-20"
+        >
+          Submit
+        </el-button>
+      </div>
+      <div v-if="errorMessage" class="text-red-500 text-xs mt-1">
         {{ errorMessage }}
       </div>
     </div>
