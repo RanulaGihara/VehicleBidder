@@ -25,24 +25,7 @@
     </div>
 
     <!-- Bid Section -->
-    <div class="px-4 pt-5  mt-4 border-t">
-      <!-- <el-input
-        v-model="bidPrice"
-        placeholder="Enter bid amount"
-        type="number"
-        @input="validateBid"
-        size="small"
-        class="mb-2"
-      />
-      <el-button  
-        type="primary"
-        :disabled="!isValidBid"
-        @click="submitBid"
-        size="small"
-        class="w-60"
-      >
-        Submit
-      </el-button> -->
+    <div class="px-4 pt-5 mt-4 border-t">
 
       <div class="flex items-center space-x-4">
         <el-input
@@ -58,9 +41,9 @@
           :disabled="!isValidBid"
           @click="submitBid"
           size="small"
-          class="w-20"
+          class="w-15"
         >
-          Submit
+          Bid
         </el-button>
       </div>
       <div v-if="errorMessage" class="text-red-500 text-xs mt-1">
