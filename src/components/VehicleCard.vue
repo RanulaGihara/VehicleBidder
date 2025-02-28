@@ -38,6 +38,7 @@
 import { ref, computed } from "vue";
 import { useBidStore } from "@/store/bidStore";
 import type { Vehicle } from "@/types/vehicle";
+import { ElMessage } from "element-plus";
 
 const props = defineProps<{ vehicle: Vehicle }>();
 
@@ -70,7 +71,12 @@ const submitBid = () => {
   if (bidPrice.value) {
     store.addBid(props.vehicle, bidPrice.value);
     bidPrice.value = null;
-    errorMessage.value = "Bid submitted successfully!";
+    errorMessage.value = "";
+    ElMessage({
+      message: "Bid submitted successfully!",
+      type: "success",
+      duration: 2000,
+    });
   }
 };
 </script>

@@ -9,12 +9,12 @@ export default  {
       },
       colors: {
         background: {
-          DEFAULT: "#242424", // dark background
-          light: "#ffffff", // light background
+          DEFAULT: "#242424", 
+          light: "#ffffff", 
         },
         text: {
           DEFAULT: "rgba(255, 255, 255, 0.87)",
-          light: "#213547", // light text color
+          light: "#213547", 
         },
         link: {
           DEFAULT: "#646cff",
