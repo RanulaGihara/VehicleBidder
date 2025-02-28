@@ -47,6 +47,8 @@ const store = useBidStore();
 const loading = ref(true);
 const drawerVisible = ref(false);
 
+
+//todo - mobile responsive 
 onMounted(async () => {
   if (!store.vehicles.length) {
     await store.initializeData();
