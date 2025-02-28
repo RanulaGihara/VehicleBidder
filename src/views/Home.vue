@@ -1,22 +1,34 @@
 <template>
   <div class="p-5">
-    <filter-bar class="mb-5" />
-    <el-button type="primary" @click="openBiddings" class="mb-5">
-      View Biddings
-    </el-button>
-    <div v-if="loading">
-      <SkeletonLoader :skeletonCount="3" />
-    </div>
-    <div v-else>
-      <el-row :gutter="20" class="mt-5">
-        <el-col
-          v-for="vehicle in store.filteredVehicles"
-          :key="vehicle.id"
-          :span="8"
-        >
-          <vehicle-card :vehicle="vehicle" />
-        </el-col>
-      </el-row>
+    <div class="max-w-7xl mx-auto">
+      <!-- Header Section -->
+      <div class="flex w-full items-center justify-center space-x-8 mt-6">
+        <filter-bar />
+        <el-button type="success" @click="openBiddings">
+          <!-- <el-icon class="mr-1">
+            <arrow-left-bold />
+          </el-icon> -->
+          View Biddings
+        </el-button>
+      </div>
+
+      <!-- Loading state -->
+      <div v-if="loading" class="mt-5">
+        <SkeletonLoader :skeletonCount="3" />
+      </div>
+
+      <!-- Cards Section -->
+      <div v-else class="mt-10">
+        <el-row :gutter="20">
+          <el-col
+            v-for="vehicle in store.filteredVehicles"
+            :key="vehicle.id"
+            :span="8"
+          >
+            <vehicle-card :vehicle="vehicle" />
+          </el-col>
+        </el-row>
+      </div>
     </div>
     <BiddingsDrawer v-model="drawerVisible" />
   </div>
@@ -29,6 +41,7 @@ import VehicleCard from "@/components/VehicleCard.vue";
 import SkeletonLoader from "@/components/SkeletonLoader.vue";
 import BiddingsDrawer from "@/components/BiddingsDrawer.vue";
 import { useBidStore } from "@/store/bidStore";
+import { ArrowLeftBold } from "@element-plus/icons-vue";
 
 const store = useBidStore();
 const loading = ref(true);
@@ -44,6 +57,6 @@ onMounted(async () => {
 
 const openBiddings = () => {
   drawerVisible.value = true;
-  console.log("clicked", drawerVisible.value);
+  console.log("Drawer visible:", drawerVisible.value);
 };
 </script>

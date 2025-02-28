@@ -3,7 +3,7 @@
     v-model="selectedBrand"
     placeholder="Select brand"
     @change="onBrandChange"
-    style="width: 200px"
+    style="width: 400px"
   >
     <el-option value="">
       <template #default>
