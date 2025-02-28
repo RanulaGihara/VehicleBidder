@@ -1,5 +1,5 @@
 <template>
-  <el-container style="height: 100vh">
+  <el-container class="h-screen">
     <el-main>
       <router-view />
     </el-main>
