@@ -21,11 +21,11 @@
           <h3 class="font-bold">
             {{ bid.vehicle.model }} ({{ bid.vehicle.year }})
           </h3>
-          <p class="text-sm">Bid: LKR {{ bid.bidPrice.toLocaleString() }}</p>
+          <p class="text-sm">Bid: {{ formatLKR(bid.bidPrice) }}</p>
         </div>
       </div>
       <div class="mt-4 text-right font-semibold">
-        Total: LKR {{ totalBids.toLocaleString() }}
+        Total: {{ formatLKR(totalBids) }}
       </div>
     </div>
     <div v-else>
@@ -37,6 +37,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useBidStore } from "@/store/bidStore";
+import { formatLKR } from "@/utils/helper-functions";
 
 const props = defineProps({
   visible: {
