@@ -1,10 +1,8 @@
 <template>
-  <div class="p-5">
+  <div class="p-5 bg-white dark:bg-gray-900 text-black dark:text-white">
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
-      <div
-        class="flex flex-row sm:flex-col md:flex-row items-center justify-center mt-6 space-x-8"
-      >
+      <div class="flex w-full items-center justify-center mt-6 space-x-8">
         <filter-bar class="w-full sm:w-auto" />
         <el-button type="success" @click="openBiddings">
           View Biddings
@@ -43,7 +41,6 @@ import VehicleCard from "@/components/VehicleCard.vue";
 import SkeletonLoader from "@/components/SkeletonLoader.vue";
 import BiddingsDrawer from "@/components/BiddingsDrawer.vue";
 import { useBidStore } from "@/store/bidStore";
-import { ArrowLeftBold } from "@element-plus/icons-vue";
 
 const store = useBidStore();
 const loading = ref(true);
@@ -59,6 +56,5 @@ onMounted(async () => {
 
 const openBiddings = () => {
   drawerVisible.value = true;
-  console.log("Drawer visible:", drawerVisible.value);
 };
 </script>
