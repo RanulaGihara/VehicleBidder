@@ -1,5 +1,37 @@
+# Vehicle Bidding App
+
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+VehicleBidder is a modern web application built with Vue 3 that allows to browse vehicles, place bids, and track their bidding history. The app features a responsive design with a dark mode toggle, powered by Tailwind CSS, Element Plus, and Pinia for state management.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Features
+
+- Browse a list of vehicles with detailed information
+- Place bids on vehicles with form validations
+- View all bids in a side drawer with real-time total calculations
+- Toggle between light and dark modes with persistence
+- Fully responsive design for mobile, tablet, and desktop
+
+## Clone and Installation
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/your-username/vehicle-bidding-app.git
+   cd vehicle-bidding-app
+   ```
+
+2. **Install dependencies:**
+
+npm install
+
+2. **Run the development server:**
+
+npm run dev
+
+Open your browser and navigate to http://localhost:5173 to view the app.
+
+# Contact
+
+-Name: Ranula Gihara
+-Email: rggamage1997@gmail.com
