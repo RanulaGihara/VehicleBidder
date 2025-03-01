@@ -1,7 +1,5 @@
 # Vehicle Bidding App
 
-# Vue 3 + TypeScript + Vite
-
 VehicleBidder is a modern web application built with Vue 3 that allows to browse vehicles, place bids, and track their bidding history. The app features a responsive design with a dark mode toggle, powered by Tailwind CSS, Element Plus, and Pinia for state management.
 
 ## Features
@@ -23,15 +21,19 @@ VehicleBidder is a modern web application built with Vue 3 that allows to browse
 
 2. **Install dependencies:**
 
+```sh
 npm install
+```
 
-2. **Run the development server:**
+3. **Run the development server:**
 
+```sh
 npm run dev
+```
 
 Open your browser and navigate to http://localhost:5173 to view the app.
 
 # Contact
 
--Name: Ranula Gihara
--Email: rggamage1997@gmail.com
+**Name: Ranula Gihara**
+**Email: rggamage1997@gmail.com**
