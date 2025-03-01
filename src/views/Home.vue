@@ -2,12 +2,11 @@
   <div class="p-5">
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
-      <div class="flex w-full items-center justify-center space-x-8 mt-6">
-        <filter-bar />
+      <div
+        class="flex flex-row sm:flex-col md:flex-row items-center justify-center mt-6 space-x-8"
+      >
+        <filter-bar class="w-full sm:w-auto" />
         <el-button type="success" @click="openBiddings">
-          <!-- <el-icon class="mr-1">
-            <arrow-left-bold />
-          </el-icon> -->
           View Biddings
         </el-button>
       </div>
@@ -23,7 +22,10 @@
           <el-col
             v-for="vehicle in store.filteredVehicles"
             :key="vehicle.id"
-            :span="8"
+            :span="24"
+            :sm="12"
+            :md="8"
+            class="mb-4"
           >
             <vehicle-card :vehicle="vehicle" />
           </el-col>
@@ -47,8 +49,6 @@ const store = useBidStore();
 const loading = ref(true);
 const drawerVisible = ref(false);
 
-
-//todo - mobile responsive 
 onMounted(async () => {
   if (!store.vehicles.length) {
     await store.initializeData();
