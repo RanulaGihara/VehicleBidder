@@ -22,20 +22,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useBidStore } from "@/store/bidStore";
+import { VehicleBrandsArray } from "@/types/vehicle";
 
 const store = useBidStore();
-
-const brands = [
-  "BMW",
-  "Tesla",
-  "Porsche",
-  "Lamborghini",
-  "Mercedes-Benz",
-  "Toyota",
-  "Honda",
-];
-
 const selectedBrand = ref<string>("");
+
+
+const brands = VehicleBrandsArray;
 
 const onBrandChange = (brand: string) => {
   store.setFilteredBrand(brand);

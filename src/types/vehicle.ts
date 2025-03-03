@@ -9,3 +9,15 @@ export interface Vehicle {
   description: string;
   currency: string;
 }
+
+export enum VehicleBrand {
+  BMW = "BMW",
+  Tesla = "Tesla",
+  Porsche = "Porsche",
+  Lamborghini = "Lamborghini",
+  MercedesBenz = "Mercedes-Benz",
+  Toyota = "Toyota",
+  Honda = "Honda",
+}
+
+export const VehicleBrandsArray = Object.values(VehicleBrand);
